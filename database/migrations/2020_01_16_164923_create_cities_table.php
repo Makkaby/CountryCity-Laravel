@@ -17,8 +17,6 @@ class CreateCitiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('countrycode');
-            //$table->integer('countrycode_id')->unsigned();
-            //$table->foreign('countrycode_id')->references('id')->on('country');
             $table->string('district');
             $table->string('population');
         });

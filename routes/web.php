@@ -12,8 +12,19 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master');
 });
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+    //Route::get("city", "CityController@getall");
+    
+    Route::resource('city', 'CityaddController');
+    Route::resource('country', 'CountryaddController');
+    
+    
 //Route::get('/', 'CityController@index');
 //Route::get('/city', 'CityController@index')->name("city.index");
 //Route::get('/city/{id}','CityController@find')->where('id', '[0-9]+');
@@ -23,16 +34,18 @@ Route::get('/', function () {
 //    return view("city");
 //});
 //Route::get('city','CityController@gett');
+
+/*
 Route::get('city', function()
     {
         return View::make('city');
     });
+*/
 
-    Route::resource("country", "CountryController");
-    Route::resource("city2", "CityController");
 
+    //Route::resource("country", "CountryController");
+    //Route::get("country2", "CountryController@getall");
     //Route::get('/city', 'CityController@cities');
-
 //Route::get('/books', 'CountryController@index')->name("books.index");
 //Route::get('/', 'CountryController@index');
 //Route::get('/cities', 'CityController@index')->name("cities.index");

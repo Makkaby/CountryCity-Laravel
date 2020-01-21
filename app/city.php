@@ -3,8 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Eloquent;
 
-class city extends Model
+class city extends Eloquent
 {
     //
     /*public $id;
@@ -13,8 +14,19 @@ class city extends Model
     public $district;
     public $population;
     */
+    protected $table = 'city';
     protected $fillable = ['name', 'countrycode', 'district', 'population'];
+    public $timestamps = false;
 
+
+    public function city()
+    {
+       return $this->belongsTo('App\Country', 'capital', 'id');
+    }
+    //public function city() {
+    //    return $this->belongsTo(Country::class);
+    //  }
+    
 }
 
 /*

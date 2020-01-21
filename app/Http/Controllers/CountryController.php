@@ -14,7 +14,7 @@ class CountryController extends Controller
         }
        //return view("category.index",["categories"=>$categories]);
        
-       public function indexx()
+       public function getall()
        {
        $country=Country::get();//all()
        return view("country.index",["country"=>$country]);
